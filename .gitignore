@@ -58,3 +58,6 @@ bower.json
 # Ignore ansible keys
 /config/provision/keys/id_rsa
 /config/provision/keys/id_rsa.pub
+
+# Ingore rails secret token
+/config/provision/configs/settings.yml
