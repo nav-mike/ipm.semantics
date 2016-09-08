@@ -1,0 +1,10 @@
+---
+- hosts: all
+
+  tasks:
+    - name: Run rails server
+      shell: rails
+      args:
+        chdir: /home/vagrant/semantics/
+        # free_form: no
+      become: no
