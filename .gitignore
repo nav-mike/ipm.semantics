@@ -54,3 +54,7 @@ bower.json
 *.swp
 
 .byebug_history
+
+# Ignore ansible keys
+/config/provision/keys/id_rsa
+/config/provision/keys/id_rsa.pub
