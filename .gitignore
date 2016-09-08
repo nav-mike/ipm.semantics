@@ -61,3 +61,5 @@ bower.json
 
 # Ingore rails secret token
 /config/provision/configs/settings.yml
+.DS_Store
+/.vagrant
