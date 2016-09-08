@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 #gem 'pg', group: :production
@@ -25,14 +25,21 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+group :development do
+  # Гем, который добавляет специфические для Rails таски, такие как прогон миграций и компиляция ассетов
+  gem 'capistrano-rails'
+  # Гем, добавляющий возможности bundle к capistrano
+  gem 'capistrano-bundler'
+  # Добавление поддержки Rbenv (менеджера версий для Ruby)
+  gem 'capistrano-rbenv'
+  # Интеграция пумы и капистрано
+  gem 'capistrano3-puma'
+end
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+group :production do 
+  # Puma - это Ruby/Rack сервер, который будет получать запросы из Nginx и направлять их в Rails, эдакое связующее звено
+  gem 'puma'
+end
 
 # auth
 gem 'devise'

@@ -1,3 +1,4 @@
+{<img src="https://travis-ci.org/nav-mike/ipm.semantics.public.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/nav-mike/ipm.semantics.public]
 == README
 
 This README would normally document whatever steps are necessary to get the
