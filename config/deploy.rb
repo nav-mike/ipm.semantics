@@ -2,7 +2,7 @@
 lock '3.6.1'
 
 # Change these
-server '138.68.68.255', user: 'deploy' roles: [:web, :app, :db], primary: true
+server '138.68.68.255', user: 'deploy', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:nav-mike/ipm.semantics.git'
 set :application,     'semantics'
