@@ -54,3 +54,6 @@ bower.json
 *.swp
 
 .byebug_history
+
+.DS_Store
+/.vagrant

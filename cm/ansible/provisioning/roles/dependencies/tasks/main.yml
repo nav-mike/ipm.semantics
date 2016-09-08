@@ -19,4 +19,5 @@
     - libxslt1-dev
     - libxml2-dev
     - zlib1g-dev
+    - nodejs
   become: yes
