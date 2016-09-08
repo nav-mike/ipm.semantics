@@ -1,0 +1,22 @@
+---
+
+- name: Install app deps
+  apt:
+    name: '{{ item }}'
+    state: present
+    update_cache: yes
+  with_items:
+    - imagemagick
+    - git
+  become: yes
+
+- name: Nokogiri (gem) deps
+  apt:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - build-essential
+    - libxslt1-dev
+    - libxml2-dev
+    - zlib1g-dev
+  become: yes

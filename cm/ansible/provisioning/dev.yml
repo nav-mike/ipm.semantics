@@ -1,0 +1,30 @@
+---
+- hosts: all
+
+  roles:
+    - dependencies
+    - rvm-rubies
+    - pg
+
+  # Development-specific tasks 🍳
+  # If they get too large, make them a role as well
+  tasks:
+    - name: Run bundle install
+      shell: bundle install
+      args:
+        chdir: '/home/vagrant/semantics'
+
+    - name: Rake create
+      shell: rake db:create
+      args:
+        chdir: '/home/vagrant/semantics'
+
+    - name: Rake migrate
+      shell: rake db:migrate
+      args:
+        chdir: '/home/vagrant/semantics'
+
+    - name: Rake seed
+      shell: rake db:seed
+      args:
+        chdir: '/home/vagrant/semantics'
