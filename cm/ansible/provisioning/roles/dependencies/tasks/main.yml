@@ -20,4 +20,5 @@
     - libxml2-dev
     - zlib1g-dev
     - nodejs
+    - mc
   become: yes
