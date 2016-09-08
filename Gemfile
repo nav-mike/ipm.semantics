@@ -26,20 +26,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development do
-  # Гем, который добавляет специфические для Rails таски, такие как прогон миграций и компиляция ассетов
-  gem 'capistrano-rails'
-  # Гем, добавляющий возможности bundle к capistrano
-  gem 'capistrano-bundler'
-  # Добавление поддержки Rbenv (менеджера версий для Ruby)
-  gem 'capistrano-rbenv'
-  # Интеграция пумы и капистрано
-  gem 'capistrano3-puma'
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
 end
 
-group :production do 
-  # Puma - это Ruby/Rack сервер, который будет получать запросы из Nginx и направлять их в Rails, эдакое связующее звено
-  gem 'puma'
-end
+gem 'puma'
 
 # auth
 gem 'devise'
