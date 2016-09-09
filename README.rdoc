@@ -34,3 +34,7 @@ Please feel free to use a different markup language if you do not plan to run
 
 restart puma: bundle exec pumactl -P ~/apps/semantics/shared/tmp/pids/puma.pid restart
 
+
+http://ruby-journal.com/how-to-setup-rails-app-with-puma-and-nginx/
+
+https://www.digitalocean.com/community/tutorials/deploying-a-rails-app-on-ubuntu-14-04-with-capistrano-nginx-and-puma
