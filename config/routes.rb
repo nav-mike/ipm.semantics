@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'pages#show'
 
+  get '/courses' => 'courses#public_index'
+  get '/courses/:id' => 'courses#show', constraints: {id: /[0-9]+/}
+
   get '/admin' => 'pages#index'
 
   # debug cube

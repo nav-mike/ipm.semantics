@@ -1,8 +1,15 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:edit, :update, :destroy]
+  skip_before_filter :authenticate_user!, only: %i(show public_index)
 
   def index
     @courses = Course.all
+  end
+
+  def public_index
+    @courses = Course.all
+
+    render layout: 'public'
   end
 
   def new

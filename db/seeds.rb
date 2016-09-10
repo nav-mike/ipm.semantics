@@ -110,7 +110,8 @@ Page.create! name: 'student',
                     <p><a href="http://ipm.ifmo.ru/wp-content/uploads/2014/12/CompGraphics-slides.zip">Презентации лекций</a> по дисциплине &#171;Компьютерная графика&#187; (кафедра ВТ, материалы от 03.12.2014).</p>
                     <p><a href="http://ipm.ifmo.ru/wp-content/uploads/2014/12/onlyLabsGraphics.pdf">Задания</a> к доп. курсу по Си, а также <a href="http://ipm.ifmo.ru/wp-content/uploads/2014/12/lib.zip">библиотека</a>, о которой идёт речь в заданиях.</p>
                     <p><a href="http://ipm.ifmo.ru/testing/">Задания</a> к лабораторным по курсу &#171;Тестирование программного обеспечения&#187;.</p>
-                    <p>Задания для гр. 3108: <a href="http://ipm.ifmo.ru/wp-content/uploads/2014/12/lab_cache.pdf" target="_blank">№1</a>, <a href="http://ipm.ifmo.ru/wp-content/uploads/2014/12/lab-procinfo.pdf" target="_blank">№2</a>.</p>'
+                    <p>Задания для гр. 3108: <a href="http://ipm.ifmo.ru/wp-content/uploads/2014/12/lab_cache.pdf" target="_blank">№1</a>, <a href="http://ipm.ifmo.ru/wp-content/uploads/2014/12/lab-procinfo.pdf" target="_blank">№2</a>.</p>
+                    <p>Информация об учебных курсах доступна <a href="/courses">здесь</a>.</p>'
 
 Page.create! name: 'graduate',
              path: '/pages/graduate',
