@@ -1,0 +1,22 @@
+h1 Listing courses
+
+p
+  = link_to 'New Course', new_course_path, class: 'btn btn-primary'
+
+table.table.table-bordered.table-hover.table-stripped
+  thead
+    tr
+      th
+      th Title
+      th
+      th
+      th
+
+  tbody
+    - @courses.each do |course|
+      tr
+        td = course.id
+        td = course.title
+        td = link_to 'Show', "/courses/#{course.id}", class: 'btn btn-info'
+        td = link_to 'Edit', edit_course_path(course), class: 'btn btn-warning'
+        td = link_to 'Destroy', course, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'

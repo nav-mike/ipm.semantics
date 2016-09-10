@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   devise_for :users
   scope 'admin' do
     resources :publications, except: :show
@@ -6,12 +7,16 @@ Rails.application.routes.draw do
     resources :projects, except: :show
     resources :pages, except: :show
     resources :users, except: :show
+    resources :courses, except: :show
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'pages#show'
+
+  get '/courses' => 'courses#public_index'
+  get '/courses/:id' => 'courses#show', constraints: {id: /[0-9]+/}
 
   get '/admin' => 'pages#index'
 
