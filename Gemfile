@@ -46,6 +46,7 @@ gem 'font-awesome-rails'
 gem 'slim-rails'
 gem 'simple_form'
 gem 'bootstrap-generators', group: :development
+gem 'bootsy'
 
 # grid view
 gem 'wice_grid', '3.6.0.pre4'

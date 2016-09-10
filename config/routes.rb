@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   devise_for :users
   scope 'admin' do
     resources :publications, except: :show
