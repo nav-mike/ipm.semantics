@@ -17,6 +17,6 @@ table.table.table-bordered.table-hover.table-stripped
       tr
         td = course.id
         td = course.title
-        td = link_to 'Show', "/courses/#{id}", class: 'btn btn-info'
+        td = link_to 'Show', "/courses/#{course.id}", class: 'btn btn-info'
         td = link_to 'Edit', edit_course_path(course), class: 'btn btn-warning'
         td = link_to 'Destroy', course, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
