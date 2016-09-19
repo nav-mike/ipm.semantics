@@ -1,0 +1,14 @@
+- title 'Проектная деятельность'
+
+.page-header
+  h2 Проектная деятельность
+
+.container
+  - @projects.each do |project|
+    .row
+      h4
+        a href="/project/#{project.id}"
+          = project.title
+      .col-md-12.text-justify
+        = project.full_description
+        = link_to ' Читать далее', "/projects/#{project.id}"

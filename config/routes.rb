@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   get '/courses' => 'courses#public_index'
   get '/courses/:id' => 'courses#show', constraints: {id: /[0-9]+/}
 
+  # projects - public
+  get '/projects' => 'projects#public_index'
+
   get '/admin' => 'pages#index'
 
   # debug cube

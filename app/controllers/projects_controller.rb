@@ -1,10 +1,15 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:edit, :update, :destroy]
+  skip_before_filter :authenticate_user!, only: %i(show public_index)
 
-  # GET /projects
-  # GET /projects.json
   def index
     @projects = Project.all
+  end
+
+  def public_index
+    @projects = Project.all.order(:title)
+
+    render layout: 'public'
   end
 
   # GET /projects/new
