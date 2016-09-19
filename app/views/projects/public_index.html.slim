@@ -3,6 +3,11 @@
 .page-header
   h2 Проектная деятельность
 
+.panel.panel-default
+  .panel-body
+    - prj = @projects.first
+    = react_component('Project', {id: prj.id, title: prj.title, description: prj.short_description}, {prerender: true})
+
 .container
   - @projects.each do |project|
     .row
