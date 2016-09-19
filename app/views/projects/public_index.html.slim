@@ -10,5 +10,5 @@
         a href="/project/#{project.id}"
           = project.title
       .col-md-12.text-justify
-        = project.full_description
+        == project.short_description
         = link_to ' Читать далее', "/projects/#{project.id}"

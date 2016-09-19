@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   # projects - public
   get '/projects' => 'projects#public_index'
+  get '/projects/:id' => 'projects#show', constraints: {id: /[0-9]+/}
 
   get '/admin' => 'pages#index'
 

@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:edit, :update, :destroy]
+  before_action :set_project, only: [:edit, :update, :destroy, :show]
   skip_before_filter :authenticate_user!, only: %i(show public_index)
 
   def index
@@ -9,6 +9,10 @@ class ProjectsController < ApplicationController
   def public_index
     @projects = Project.all.order(:title)
 
+    render layout: 'public'
+  end
+
+  def show
     render layout: 'public'
   end
 
