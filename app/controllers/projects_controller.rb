@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   skip_before_filter :authenticate_user!, only: %i(show public_index)
 
   def index
-    @projects = Project.all
+    @projects = Project.all.order(:title)
   end
 
   def public_index

@@ -1,12 +1,18 @@
-h1 Listing projects
+- title 'Список проектов'
 
-table.table.table-bordered.table-hover.table-stripped
+.page-header
+  h1 Список проектов
+
+= link_to 'Добавить новый проект', new_project_path, class: 'btn btn-primary'
+
+br
+
+table.table.table-hover.table-stripped
   thead
     tr
-      th Title
-      th Name
-      th Start date
-      th End date
+      th Название
+      th Дата начала
+      th Дата окончания
       th
       th
 
@@ -14,12 +20,11 @@ table.table.table-bordered.table-hover.table-stripped
     - @projects.each do |project|
       tr
         td = project.title
-        td = project.name
         td = project.start_date
         td = project.end_date
-        td = link_to 'Edit', edit_project_path(project), class: 'btn btn-warning'
-        td = link_to 'Destroy', project, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
-
-br
-
-= link_to 'New Project', new_project_path, class: 'btn btn-primary'
+        td 
+          = link_to edit_project_path(project), class: 'btn btn-warning btn-xs' do
+            = fa_icon 'fw pencil', text: 'Изменить'
+        td
+          = link_to project, data: {:confirm => 'Вы уверены?'}, :method => :delete, class: 'btn btn-danger btn-xs' do
+            = fa_icon 'fw trash', text: 'Удалить'
