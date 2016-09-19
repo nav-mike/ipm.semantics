@@ -5,8 +5,16 @@ class @Project extends React.Component
     description: React.PropTypes.string
 
   render: ->
-    `<div>
-      <div>Id: {this.props.id}</div>
-      <div>Title: {this.props.title}</div>
-      <div>Description: {this.props.description}</div>
+    `<div className='panel panel-default'>
+      <div className='panel-body'>
+        <h4>
+          <a href={'/projects/' + this.props.id}>{this.props.title}</a>
+        </h4>
+        <div className='col-md-12 text-justify'>
+          <p>
+            {this.props.description}
+          </p>
+          <a href={'/projects/' + this.props.id}> Читать далее</a>
+        </div>
+      </div>
     </div>`
