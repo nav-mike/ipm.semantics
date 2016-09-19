@@ -5,7 +5,7 @@ html
     meta http-equiv='X-UA-Compatible' content='IE=edge'
     meta name='viewport' content='width=device-width, initial-scale=1'
 
-    title state-title='Semantic CMS Admin pages' pattern='%s | Semantic CMS Admin pages'
+    title = "#{yield(:title)} - Кафедра информатики и прикладной математики"
 
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
@@ -57,7 +57,7 @@ html
             li
               a href='/admin/projects'
                 i.fa.fa-file-code-o.fa-fw
-                |  Projects
+                |  Проекты
             li
               a href='/admin/publications'
                 i.fa.fa-book.fa-fw
