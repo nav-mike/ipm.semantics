@@ -1,10 +1,19 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:edit, :update, :destroy]
+  before_action :set_project, only: [:edit, :update, :destroy, :show]
+  skip_before_filter :authenticate_user!, only: %i(show public_index)
 
-  # GET /projects
-  # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.all.order(:title)
+  end
+
+  def public_index
+    @projects = Project.all.order(:title)
+
+    render layout: 'public'
+  end
+
+  def show
+    render layout: 'public'
   end
 
   # GET /projects/new
@@ -68,6 +77,8 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:github, :twitter, :keywords, :status, :title, :name, :logo, :start_date, :end_date, :description, :link, person_ids: [], publication_ids: [])
+      params.require(:project).permit(:github, :twitter, :keywords, :status, :title,
+        :name, :logo, :start_date, :end_date, :short_description,
+        :full_description, :link, person_ids: [], publication_ids: [])
     end
 end

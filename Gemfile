@@ -47,6 +47,7 @@ gem 'slim-rails'
 gem 'simple_form'
 gem 'bootstrap-generators', group: :development
 gem 'bootsy'
+gem 'react-rails'
 
 # grid view
 gem 'wice_grid', '3.6.0.pre4'
