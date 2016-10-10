@@ -58,6 +58,21 @@ gem 'faker'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec'
+  gem 'rspec-json_expectations'
+  gem 'mocha'
+  gem 'factory_girl'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'simplecov', require: false, group: :test
+  gem 'capybara-screenshot', group: :test
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
 group :development do
