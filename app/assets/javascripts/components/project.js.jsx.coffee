@@ -11,9 +11,8 @@ class @Project extends React.Component
           <a href={'/projects/' + this.props.id}>{this.props.title}</a>
         </h4>
         <div className='col-md-12 text-justify'>
-          <p>
-            {this.props.description}
-          </p>
+          <div dangerouslySetInnerHTML={{__html: this.props.description}}>
+          </div>
           <a href={'/projects/' + this.props.id}> Читать далее</a>
         </div>
       </div>
