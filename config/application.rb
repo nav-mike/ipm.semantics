@@ -33,7 +33,7 @@ module SemanticCmsDemo
 
     config.generators do |g|
       g.orm :active_record
-      g.test_framework :minitest, spec: false, fixture: false
+      g.test_framework :rspec, spec: false, fixture: false
       g.stylesheets true
       g.javascripts true
       g.jbuilder true
