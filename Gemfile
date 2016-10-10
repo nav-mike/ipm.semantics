@@ -60,6 +60,19 @@ group :development, :test do
   gem 'byebug'
 
   gem 'rspec-rails', '~> 3.5'
+  gem 'rspec'
+  gem 'rspec-json_expectations'
+  gem 'mocha'
+  gem 'factory_girl'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'simplecov', require: false, group: :test
+  gem 'capybara-screenshot', group: :test
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
 group :development do
