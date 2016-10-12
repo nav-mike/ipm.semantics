@@ -1,6 +1,6 @@
 class CreateDataCube < ActiveRecord::Migration
   def change
-    create_table :people_projects, :id => false do |t|
+    create_table :people_projects, id: false do |t|
       t.integer :person_id
       t.integer :project_id
     end

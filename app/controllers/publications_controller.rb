@@ -57,13 +57,12 @@ class PublicationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_publication
-      @publication = Publication.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def publication_params
-      params.require(:publication).permit(:bib, person_ids: [], project_ids: [])
-    end
+  def set_publication
+    @publication = Publication.find(params[:id])
+  end
+
+  def publication_params
+    params.require(:publication).permit(:bib, person_ids: [], project_ids: [])
+  end
 end
