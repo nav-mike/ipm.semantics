@@ -1,4 +1,7 @@
 class Publication < ActiveRecord::Base
-  has_and_belongs_to_many :people
-  has_and_belongs_to_many :projects
+  has_many :people_publications
+  has_many :people, through: :people_publications
+
+  has_many :projects_publications
+  has_many :projects, through: :projects_publications
 end

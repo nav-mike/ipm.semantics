@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_page, only: [:edit, :update, :destroy]
-  skip_before_filter :authenticate_user!, only: :show
+  skip_before_action :authenticate_user!, only: :show
 
   # GET /pages
   # GET /pages.json
@@ -65,13 +65,12 @@ class PagesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_page
-      @page = Page.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def page_params
-      params.require(:page).permit(:name, :path, :title, :html)
-    end
+  def set_page
+    @page = Page.find(params[:id])
+  end
+
+  def page_params
+    params.require(:page).permit(:name, :path, :title, :html)
+  end
 end
