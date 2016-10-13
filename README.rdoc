@@ -1,5 +1,3 @@
-{<img src="https://travis-ci.org/nav-mike/ipm.semantics.public.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/nav-mike/ipm.semantics.public]
-
 {<img src="https://codeship.com/projects/8c692e70-6b87-0134-d5a6-6efe74dd2a57/status?branch=develop" alt="Build Status" />}[https://github.com/nav-mike/ipm.semantics]
 == README
 
