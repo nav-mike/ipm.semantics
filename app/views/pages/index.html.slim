@@ -1,12 +1,14 @@
-h1 Listing pages
+- title 'Публичные страницы'
+
+h1 Список страниц
 
 table.table.table-bordered.table-hover.table-stripped
   thead
     tr
-      th Name
-      th Path
-      th Title
-      th Html
+      th Имя
+      th Путь
+      th Заголовок
+      th Контент
       th
       th
       th
@@ -20,10 +22,10 @@ table.table.table-bordered.table-hover.table-stripped
         td
           span title='#{page.html}'
             = page.html.gsub(/(.{40}).+/, '\1...')
-        td = link_to 'Show', page.path, class: 'btn btn-default', target: '_blank'
-        td = link_to 'Edit', edit_page_path(page), class: 'btn btn-warning'
-        td = link_to 'Destroy', page, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
+        td = link_to 'Показать', page.path, class: 'btn btn-default', target: '_blank'
+        td = link_to 'Изменить', edit_page_path(page), class: 'btn btn-warning'
+        td = link_to 'Удалить', page, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
 
 br
 
-= link_to 'New Page', new_page_path, class: 'btn btn-primary'
+= link_to 'Добавить новую страницу', new_page_path, class: 'btn btn-primary'
