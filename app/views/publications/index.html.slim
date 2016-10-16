@@ -1,4 +1,4 @@
-h1 Listing publications
+h1 Список публикаций
 
 table.table.table-bordered.table-hover.table-stripped
   thead
@@ -11,9 +11,9 @@ table.table.table-bordered.table-hover.table-stripped
     - @publications.each do |publication|
       tr
         td = publication.bib
-        td = link_to 'Edit', edit_publication_path(publication), class: 'btn btn-warning'
-        td = link_to 'Destroy', publication, data: {:confirm => 'Вы уверены, что хотите удалить публикацию?'}, :method => :delete, class: 'btn btn-danger'
+        td = link_to 'Изменить', edit_publication_path(publication), class: 'btn btn-warning'
+        td = link_to 'Удалить', publication, data: {:confirm => 'Вы уверены, что хотите удалить публикацию?'}, :method => :delete, class: 'btn btn-danger'
 
 br
 
-= link_to 'New Publication', new_publication_path, class: 'btn btn-primary'
+= link_to 'Добавить публикацию', new_publication_path, class: 'btn btn-primary'
