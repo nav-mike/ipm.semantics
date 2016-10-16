@@ -1,10 +1,10 @@
-h1 Listing users
+h1 Список пользователей
 
 table.table.table-bordered.table-hover.table-stripped
   thead
     tr
-      th email
-      th roles
+      th Электронная почта
+      th роли
       th
       th
   tbody
@@ -12,9 +12,9 @@ table.table.table-bordered.table-hover.table-stripped
       tr
         td = user.email
         td = user.roles.pluck(:name)
-        td = link_to 'Edit', edit_user_path(user), class: 'btn btn-warning'
-        td = link_to 'Destroy', user, data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-danger'
+        td = link_to 'Изменить', edit_user_path(user), class: 'btn btn-warning'
+        td = link_to 'Удалить', user, data: {confirm: 'Вы уверены, что хотите удалить пользователя?'}, method: :delete, class: 'btn btn-danger'
 
 br
 
-= link_to 'New User', new_user_path, class: 'btn btn-primary'
+= link_to 'Добавить пользователя', new_user_path, class: 'btn btn-primary'
