@@ -26,5 +26,5 @@ table.table.table-hover.table-stripped
           = link_to edit_project_path(project), class: 'btn btn-warning btn-xs' do
             = fa_icon 'fw pencil', text: 'Изменить'
         td
-          = link_to project, data: {:confirm => 'Вы уверены?'}, :method => :delete, class: 'btn btn-danger btn-xs' do
+          = link_to project, data: {:confirm => 'Вы уверены, что хотите удалить проект?'}, :method => :delete, class: 'btn btn-danger btn-xs' do
             = fa_icon 'fw trash', text: 'Удалить'
