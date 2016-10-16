@@ -1,13 +1,15 @@
-h1 Listing courses
+- title 'Список курсов'
+
+h1 Список курсов
 
 p
-  = link_to 'New Course', new_course_path, class: 'btn btn-primary'
+  = link_to 'Добавить курс', new_course_path, class: 'btn btn-primary'
 
 table.table.table-bordered.table-hover.table-stripped
   thead
     tr
       th
-      th Title
+      th Название
       th
       th
       th
@@ -17,6 +19,6 @@ table.table.table-bordered.table-hover.table-stripped
       tr
         td = course.id
         td = course.title
-        td = link_to 'Show', "/courses/#{course.id}", class: 'btn btn-info'
-        td = link_to 'Edit', edit_course_path(course), class: 'btn btn-warning'
-        td = link_to 'Destroy', course, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
+        td = link_to 'Показать', "/courses/#{course.id}", class: 'btn btn-info'
+        td = link_to 'Изменить', edit_course_path(course), class: 'btn btn-warning'
+        td = link_to 'Удалить', course, data: {:confirm => 'Вы уверены, что хотите удалить курс?'}, :method => :delete, class: 'btn btn-danger'

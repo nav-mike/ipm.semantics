@@ -2,9 +2,9 @@
   = simple_form_for @user do |f|
     .box-body
       = f.input :email
-      = f.input :password, hint: ('Leave empty if you do not need to change password' unless @user.new_record?), input_html: {data: {toggle: 'password'}}
+      = f.input :password, hint: ('Оставьте поле пустым, если вы не хотите изменить пароль' unless @user.new_record?), input_html: {data: {toggle: 'password'}}
       - if current_user.has_role? :admin
         = f.input :role_ids, as: :select, collection: Role.all, input_html: {multiple: true, size: 10}, col_html: {class: 'col-sm-2'}
 
     .form-group
-      = f.button :submit, class: 'btn-success btn-save'
+      = f.button :submit, 'Сохранить', class: 'btn-success btn-save'
