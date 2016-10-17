@@ -1,8 +1,15 @@
 default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: semantics
+  password: semantics123
+  host: localhost
+  port: 5432
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  timeout: 5000
 
+#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 production:
   <<: *default
-  adapter: sqlite3
-  database: db/production.sqlite3
+  url: <%= ENV['SEMANTICS_DATABASE_URL'] %>
