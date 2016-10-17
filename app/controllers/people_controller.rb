@@ -11,7 +11,7 @@ class PeopleController < ApplicationController
   def new
     @person = Person.new
   end
-  
+
   def cube
     render 'cube/person'
   end
@@ -61,13 +61,18 @@ class PeopleController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_person
-      @person = Person.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def person_params
-      params.require(:person).permit(:linkedin, :google_plus, :scopus, :university, :awards, :impact_story, :google_scholar, :cv, :orcid, :name, :biography, :email, :room, :laboratory, :website, :github, :education, :twitter, :photo, :fb, project_ids: [], publication_ids: [])
-    end
+  def set_person
+    @person = Person.find(params[:id])
+  end
+
+  def person_params
+    params
+      .require(:person)
+      .permit(:linkedin, :google_plus, :scopus, :university, :awards,
+              :impact_story, :google_scholar, :cv, :orcid, :name,
+              :biography, :email, :room, :laboratory, :website, :github,
+              :education, :twitter, :photo, :fb,
+              project_ids: [], publication_ids: [])
+  end
 end

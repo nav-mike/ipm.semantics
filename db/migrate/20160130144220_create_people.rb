@@ -10,7 +10,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :google_scholar, null: true, default: nil
       t.string :cv, null: true, default: nil
       t.string :orcid, null: true, default: nil
-      t.string :name, index: true, null:false
+      t.string :name, index: true, null: false
       t.text :biography
       t.string :email, null: true, default: nil
       t.string :room, null: true, default: nil

@@ -19,23 +19,22 @@ html
         .navbar-header
           button.navbar-toggle type='button' data-toggle='collapse' data-target='.navbar-collapse'
             span.icon-toggle
-          a.navbar-brand href='/admin/pages' Admin panel
+          a.navbar-brand href='/' Главная
         .navbar-collapse.collapse
           ul.nav.navbar-nav.navbar-right
             li.dropdown
               a.dropdown-toggle role='button' data-toggle='dropdown' href='#'
                 i.glyphicon.glyphicon-user
-                  |  Admin
+                  = "  #{current_user.email}"
                   span.caret
               ul.dropdown-menu#g-account-menu role='menu'
                 li
-                  a href="/admin/users/#{current_user.id}" My profile
+                  a href="/admin/users/#{current_user.id}" Профиль
                 li
-                  /a href='#{destroy_user_session_path}' method='delete'
                   = link_to destroy_user_session_path, method: :delete do
                     i.fa.fa-lock.fa-fw
-                    |  Logout
-    /! /Header                
+                    |  Выйти
+    /! /Header
     /! Main
     .container
        /! upper section
@@ -43,17 +42,17 @@ html
          .col-sm-2
            h3
              i.fa.fa-briefcase.fa-fw
-             |  Toolbox
+             |  Меню
            hr
 
            ul.nav.nav-stacked
             li
               a href='/admin/courses'
-                = fa_icon 'file-text fw', text: 'Courses'
+                = fa_icon 'file-text fw', text: 'Учебные курсы'
             li
               a href='/admin/people'
                 i.fa.fa-graduation-cap.fa-fw
-                |  People
+                |  Сотрудники
             li
               a href='/admin/projects'
                 i.fa.fa-file-code-o.fa-fw
@@ -61,19 +60,15 @@ html
             li
               a href='/admin/publications'
                 i.fa.fa-book.fa-fw
-                |  Publications
+                |  Публикации
             li
               a href='/admin/pages'
                 i.fa.fa-file-o.fa-fw
-                |  Pages
+                |  Страницы
             li
               a href='/admin/users'
                 i.fa.fa-users.fa-fw
-                |  Users
-            li
-              a href='/admin/cube/department'
-                i.fa.fa-th.fa-fw
-                |  Data cube
+                |  Пользователи
            hr
 
          .col-sm-10

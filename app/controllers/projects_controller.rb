@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:edit, :update, :destroy, :show]
-  skip_before_filter :authenticate_user!, only: %i(show public_index)
+  skip_before_action :authenticate_user!, only: %i(show public_index)
 
   def index
     @projects = Project.all.order(:title)
@@ -70,15 +70,16 @@ class ProjectsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project
-      @project = Project.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def project_params
-      params.require(:project).permit(:github, :twitter, :keywords, :status, :title,
-        :name, :logo, :start_date, :end_date, :short_description,
-        :full_description, :link, person_ids: [], publication_ids: [])
-    end
+  def set_project
+    @project = Project.find(params[:id])
+  end
+
+  def project_params
+    params
+      .require(:project)
+      .permit(:github, :twitter, :keywords, :status, :title,
+              :name, :logo, :start_date, :end_date, :short_description,
+              :full_description, :link, person_ids: [], publication_ids: [])
+  end
 end

@@ -1,10 +1,12 @@
-h1 Listing people
+- title 'Список сотрудников'
+
+h1 Список сотрудников
 
 table.table.table-bordered.table-hover.table-stripped
   thead
     tr
       th
-      th Name
+      th ФИО
       th Email
       th
       th
@@ -16,9 +18,9 @@ table.table.table-bordered.table-hover.table-stripped
           img src="#{person.photo}" style='float: left; margin-right: 20px; margin-bottom: 10px;' height='100px'
         td = person.name
         td = person.email
-        td = link_to 'Edit', edit_person_path(person), class: 'btn btn-warning'
-        td = link_to 'Destroy', person, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
+        td = link_to 'Изменить', edit_person_path(person), class: 'btn btn-warning'
+        td = link_to 'Удалить', person, data: {:confirm => 'Вы уверены, что хотите удалить сотрудника?'}, :method => :delete, class: 'btn btn-danger'
 
 br
 
-= link_to 'New Person', new_person_path, class: 'btn btn-primary'
+= link_to 'Добавить сотрудника', new_person_path, class: 'btn btn-primary'
