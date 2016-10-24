@@ -39,7 +39,7 @@ class @ResearchAreaNew extends React.Component
             id: 'research_area_uri',
             value: @state.uri,
             readOnly: true,
-            name: 'research_area[name]'},
+            name: 'research_area[uri]'},
         div className: 'form-group', style: {display: 'none'},
           input type: 'hidden', name: 'authenticity_token', value: token,
         div className: 'form-group',

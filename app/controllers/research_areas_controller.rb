@@ -25,12 +25,26 @@ class ResearchAreasController < ApplicationController
     @areas = response.body
   end
 
+  def create
+    @area = ResearchArea.new(research_area_params)
+
+    if @area.save
+      redirect_to research_areas_url
+    else
+      render :new
+    end
+  end
+
   def destroy
     @area.destroy
     redirect_to research_areas_url
   end
 
   private
+
+  def research_area_params
+    params.require(:research_area).permit(:uri)
+  end
 
   def render_areas
     uris = @areas.map(&:uri)
