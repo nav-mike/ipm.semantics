@@ -1,5 +1,6 @@
 class ResearchAreasController < ApplicationController
   before_action :set_area, only: :destroy
+  skip_before_action :authenticate_user!, only: %i(public_index)
 
   def index
     @areas = ResearchArea.all.order(:created_at)
@@ -11,6 +12,18 @@ class ResearchAreasController < ApplicationController
       logger.error e.message
       logger.error e.backtrace.join("\n")
     end
+  end
+
+  def public_index
+    @areas = ResearchArea.all
+    render_areas
+    render layout: 'public'
+  rescue => e
+    logger.tagged('ResearchAreasController_Public', self.class) do
+      logger.error e.message
+      logger.error e.backtrace.join("\n")
+    end
+    redirect_to '/'
   end
 
   def new

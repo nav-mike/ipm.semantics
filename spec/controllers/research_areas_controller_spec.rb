@@ -13,6 +13,15 @@ describe ResearchAreasController, type: :controller do
     end
   end
 
+  context 'get #public_index' do
+    let!(:research_area) { FactoryGirl.create :research_area }
+    subject! { get :public_index }
+
+    it 'should be success' do
+      expect(response).to be_success
+    end
+  end
+
   context 'delete #destroy' do
     let!(:research_area) { FactoryGirl.create :research_area }
     subject! { delete :destroy, id: research_area.id }
@@ -42,6 +51,12 @@ describe ResearchAreasController, type: :controller do
     it 'get /admin/research_areas' do
       expect(get: '/admin/research_areas').to route_to(
         controller: 'research_areas', action: 'index'
+      )
+    end
+
+    it 'get /research_areas' do
+      expect(get: '/research_areas').to route_to(
+        controller: 'research_areas', action: 'public_index'
       )
     end
 
