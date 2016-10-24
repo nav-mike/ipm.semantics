@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :pages, except: :show
     resources :users, except: :show
     resources :courses, except: :show
-    resources :research_areas, only: %i(index new delete)
+    resources :research_areas, only: %i(index new destroy)
   end
 
   root 'pages#show'
