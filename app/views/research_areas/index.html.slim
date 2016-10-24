@@ -1,0 +1,20 @@
+- title 'Области научных исследований'
+
+h1 Список областей научных исследований
+
+p
+  = link_to 'Добавить область исследований', new_research_area_path, class: 'btn btn-primary'
+
+table.table.table-bordered.table-hover.table-striped
+  thead
+    tr
+      th
+      th Назвнаие
+      th
+
+  tbody
+    - @areas.each do |area|
+      tr
+        td= area.id
+        td= area.name
+        td= link_to 'Удалить', area, data: {:confirm => 'Вы уверены, что хотите удалить область исследований?'}, :method => :delete, class: 'btn btn-danger'
