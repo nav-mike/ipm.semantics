@@ -13,6 +13,18 @@ class ResearchAreasController < ApplicationController
     end
   end
 
+  def new
+    url = "#{Rails.configuration.x.lod_ifmo_api_url}/research_areas.json"
+
+    conn = Faraday.new(url: url) do |faraday|
+      faraday.adapter Faraday.default_adapter
+      faraday.response :json
+    end
+
+    response = conn.get('')
+    @areas = response.body
+  end
+
   def destroy
     @area.destroy
     redirect_to research_areas_url
