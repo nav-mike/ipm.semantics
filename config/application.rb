@@ -29,5 +29,8 @@ module SemanticCmsDemo
       g.assets false
       g.helper false
     end
+
+    # config lod.api
+    config.x.lod_ifmo_api_url = 'http://api-lod-itmo.herokuapp.com'
   end
 end

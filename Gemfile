@@ -48,6 +48,10 @@ gem 'bootstrap-generators', group: :development
 gem 'bootsy'
 gem 'react-rails'
 
+# REST
+gem 'faraday'
+gem 'faraday_middleware'
+
 # grid view
 gem 'wice_grid', '3.6.0.pre4'
 gem 'font-awesome-sass', '~> 4.3'
