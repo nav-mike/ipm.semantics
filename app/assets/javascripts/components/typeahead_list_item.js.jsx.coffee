@@ -27,4 +27,4 @@ class @TypeaheadListItem extends React.Component
       onMouseEnter: ((e) => @handleMouseEnter(e)),
       onMouseLeave: ((e) => @handleMouseLeave(e)),
       onClick: ((e) => @handleClick(e))
-      }, "#{@props.item}"
+      }, "#{@props.item['name']}"
