@@ -1,5 +1,5 @@
 class Role < ActiveRecord::Base
-  has_and_belongs_to_many :users
+  has_many :users, through: :users_roles
   belongs_to :resource, polymorphic: true
 
   validates :resource_type,
