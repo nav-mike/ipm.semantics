@@ -22,7 +22,7 @@ class ResearchAreasController < ApplicationController
 
   def render_areas
     uris = @areas.map(&:uri)
-    url = 'http://api-lod-itmo.herokuapp.com/research_areas'
+    url = "#{Rails.configuration.x.lod_ifmo_api_url}/research_areas"
 
     conn = Faraday.new(url: url) do |faraday|
       faraday.adapter Faraday.default_adapter
