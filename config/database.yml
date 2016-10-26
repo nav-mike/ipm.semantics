@@ -19,4 +19,5 @@ test:
 
 #   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 production:
-  url: <%= ENV['SEMANTICS_DATABASE_URL'] %>
+  <<: *default
+  database: semantics
