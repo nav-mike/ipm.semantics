@@ -8,4 +8,6 @@ p
 .row
   .col-sm-1
     = link_to 'Назад', courses_path, class: 'btn btn-warning'
+  .col-sm-11
+    = link_to 'Показать', "/courses/#{@course.id}", class: 'btn btn-info'
 

@@ -1,0 +1,25 @@
+- title 'Области научных исследований'
+
+h1 Список областей научных исследований
+
+- if @error.present?
+  .alert.alert-danger== @error
+
+p
+  = link_to 'Добавить область исследований', new_research_area_path, class: 'btn btn-primary'
+
+table.table.table-bordered.table-hover.table-striped
+  thead
+    tr
+      th
+      th Назвнаие
+      th
+
+  tbody
+    - if @result.present?
+      - @result.each do |area|
+        - db_area = @areas.find_by(uri: (area[:id] || area['id']))
+        tr
+          td= db_area.id
+          td= (area[:name] || area['name'])
+          td= link_to 'Удалить', db_area, data: {:confirm => 'Вы уверены, что хотите удалить область исследований?'}, :method => :delete, class: 'btn btn-danger'

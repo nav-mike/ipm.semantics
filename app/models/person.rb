@@ -1,5 +1,7 @@
 class Person < ActiveRecord::Base
-  has_and_belongs_to_many :projects
+  has_many :people_project
+  has_many :projects, through: :people_project
 
-  has_and_belongs_to_many :publications
+  has_many :people_publication
+  has_many :publications, through: :people_publication
 end

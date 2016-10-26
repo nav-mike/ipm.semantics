@@ -50,6 +50,9 @@ html
               a href='/admin/courses'
                 = fa_icon 'file-text fw', text: 'Учебные курсы'
             li
+              = link_to research_areas_path do
+                = fa_icon 'globe fw', text: 'Научные исследования'
+            li
               a href='/admin/people'
                 i.fa.fa-graduation-cap.fa-fw
                 |  Сотрудники
