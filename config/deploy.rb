@@ -2,11 +2,11 @@
 lock '3.6.1'
 
 # Change these
-server '138.68.68.255', user: 'deploy', roles: [:web, :app, :db], primary: true
+server '138.68.68.255', user: 'semantics', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:nav-mike/ipm.semantics.git'
 set :application,     'semantics'
-set :user,            'deploy'
+set :user,            'semantics'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
