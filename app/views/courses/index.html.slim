@@ -3,7 +3,8 @@
 h1 Список курсов
 
 p
-  = link_to 'Добавить курс', new_course_path, class: 'btn btn-primary'
+  = link_to new_course_path, class: 'btn btn-primary btn-xs', title: 'Добавить курс' do
+    = fa_icon 'fw plus'
 
 table.table.table-bordered.table-hover.table-striped
   thead
@@ -19,6 +20,9 @@ table.table.table-bordered.table-hover.table-striped
       tr
         td = course.id
         td = course.title
-        td = link_to 'Показать', "/courses/#{course.id}", class: 'btn btn-info'
-        td = link_to 'Изменить', edit_course_path(course), class: 'btn btn-warning'
-        td = link_to 'Удалить', course, data: {:confirm => 'Вы уверены, что хотите удалить курс?'}, :method => :delete, class: 'btn btn-danger'
+        td = link_to "/courses/#{course.id}", class: 'btn btn-info btn-xs', title: 'Показать' do
+          = fa_icon 'fw eye'
+        td = link_to edit_course_path(course), class: 'btn btn-warning btn-xs', title: 'Изменить' do
+          = fa_icon 'fw pencil'
+        td = link_to course, data: {:confirm => 'Вы уверены, что хотите удалить курс?'}, :method => :delete, class: 'btn btn-danger btn-xs', title: 'Удалить' do
+          = fa_icon 'fw trash'
