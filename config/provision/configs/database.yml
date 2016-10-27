@@ -9,7 +9,15 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
+development:
+  <<: *default
+  database: semantics_development
+
+test:
+  <<: *default
+  database: semantics_test
+
 #   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 production:
   <<: *default
-  url: <%= ENV['SEMANTICS_DATABASE_URL'] %>
+  url: <%= $DATABASE_URL %>
