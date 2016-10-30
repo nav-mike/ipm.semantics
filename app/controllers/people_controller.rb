@@ -1,10 +1,16 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: %i(show public_index)
 
   # GET /people
   # GET /people.json
   def index
     @people = Person.all
+  end
+
+  def public_index
+    @people = Person.all
+    render layout: 'public'
   end
 
   # GET /people/new
