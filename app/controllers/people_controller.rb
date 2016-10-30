@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_action :set_person, only: [:edit, :update, :destroy]
+  before_action :set_person, only: [:edit, :update, :destroy, :show]
   skip_before_action :authenticate_user!, only: %i(show public_index)
 
   # GET /people
@@ -10,6 +10,10 @@ class PeopleController < ApplicationController
 
   def public_index
     @people = Person.all
+    render layout: 'public'
+  end
+
+  def show
     render layout: 'public'
   end
 

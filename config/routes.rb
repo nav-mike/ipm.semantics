@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   # people - public
   get '/staff' => 'people#public_index'
+  get '/staff/:id' => 'people#show', constraints: {id: /[0-9]+/}
 
   # courses - public
   get '/courses' => 'courses#public_index'
