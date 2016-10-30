@@ -14,6 +14,23 @@ class PeopleController < ApplicationController
   end
 
   def show
+    url = 'http://lobid.org'
+    conn = Faraday.new(url: url) do |faraday|
+      faraday.adapter Faraday.default_adapter
+      faraday.response :json
+    end
+
+    response = conn.get('resource', q: 'Mouromtsev', format: 'full')
+    @result = response.body
+
+    api_key = 'AhiIyVBwqOlXZN7duzMetrYnHFDE56vx'
+
+    springer_api_key = '8eab8c31c13bd807cd3740b32158da69'
+    springer_url = 'http://api.springer.com/metadata/json?api_key=8eab8c31c13bd807cd3740b32158da69&q=Mouromtsev'
+    springer_uri = URI(springer_url)
+    springer_response = Net::HTTP.get(springer_uri)
+    @springer_result = JSON.parse(springer_response)
+
     render layout: 'public'
   end
 
