@@ -1,9 +1,10 @@
 - title 'Новая страница'
 
-h1 Новая страница
+.page-header
+  h1 Новая страница
 
 p
   == render 'form'
 
-= link_to 'Назад', pages_path, class: 'btn btn-warning'
+= link_to 'Назад', pages_path, class: 'btn btn-warning btn-xs'
 

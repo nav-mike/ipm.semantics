@@ -1,22 +1,23 @@
 - title 'Список пользователей'
 
-h1 Список пользователей
+.page-header
+  h1 Список пользователей
+
+p
+  = link_to new_user_path, class: 'btn btn-primary btn-xs', title: 'Добавить пользователя' do
+    = fa_icon 'fw plus'
 
 table.table.table-bordered.table-hover.table-stripped
   thead
     tr
       th Электронная почта
-      th роли
       th
       th
   tbody
     - @users.each do |user|
       tr
         td = user.email
-        td = user.roles.pluck(:name)
-        td = link_to 'Изменить', edit_user_path(user), class: 'btn btn-warning'
-        td = link_to 'Удалить', user, data: {confirm: 'Вы уверены, что хотите удалить пользователя?'}, method: :delete, class: 'btn btn-danger'
-
-br
-
-= link_to 'Добавить пользователя', new_user_path, class: 'btn btn-primary'
+        td = link_to edit_user_path(user), class: 'btn btn-warning btn-xs', title: 'Изменить' do
+          = fa_icon 'fw pencil'
+        td = link_to user, data: {confirm: 'Вы уверены, что хотите удалить пользователя?'}, method: :delete, class: 'btn btn-danger btn-xs', title: 'Удалить' do
+          = fa_icon 'fw trash'

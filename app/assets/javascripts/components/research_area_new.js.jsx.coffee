@@ -43,4 +43,4 @@ class @ResearchAreaNew extends React.Component
         div className: 'form-group', style: {display: 'none'},
           input type: 'hidden', name: 'authenticity_token', value: token,
         div className: 'form-group',
-          button type: 'submit', className: 'btn btn-success', 'Добавить'
+          button type: 'submit', className: 'btn btn-success btn-xs', 'Добавить'

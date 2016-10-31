@@ -2,9 +2,9 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :bib
-    = f.association :people
-    = f.association :projects
+    = f.input :bib, label: 'Ссылка'
+    = f.association :people, label: 'Авторы'
+    = f.association :projects, label: 'Проекты'
 
   .form-actions
-    = f.button :submit, 'Сохранить', class: 'btn btn-success'
+    = f.button :submit, 'Сохранить', class: 'btn btn-success btn-xs'

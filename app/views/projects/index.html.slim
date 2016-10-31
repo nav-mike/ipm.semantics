@@ -2,10 +2,9 @@
 
 .page-header
   h1 Список проектов
-
-= link_to 'Добавить новый проект', new_project_path, class: 'btn btn-primary'
-
-br
+p
+  = link_to new_project_path, class: 'btn btn-primary btn-xs', title: 'Добавить новый проект' do
+    = fa_icon 'fw plus' 
 
 table.table.table-hover.table-stripped
   thead
@@ -23,8 +22,8 @@ table.table.table-hover.table-stripped
         td = project.start_date
         td = project.end_date
         td 
-          = link_to edit_project_path(project), class: 'btn btn-warning btn-xs' do
-            = fa_icon 'fw pencil', text: 'Изменить'
+          = link_to edit_project_path(project), class: 'btn btn-warning btn-xs', title: 'Изменить' do
+            = fa_icon 'fw pencil'
         td
-          = link_to project, data: {:confirm => 'Вы уверены, что хотите удалить проект?'}, :method => :delete, class: 'btn btn-danger btn-xs' do
-            = fa_icon 'fw trash', text: 'Удалить'
+          = link_to project, data: {:confirm => 'Вы уверены, что хотите удалить проект?'}, :method => :delete, class: 'btn btn-danger btn-xs', title: 'Удалить' do
+            = fa_icon 'fw trash'

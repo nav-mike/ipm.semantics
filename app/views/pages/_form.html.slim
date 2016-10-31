@@ -7,15 +7,15 @@
           li = message
 
   .form-group
-    = f.label :name
+    = f.label :name, 'Название'
     = f.text_field :name, class: 'form-control'
   .form-group
-    = f.label :path
+    = f.label :path, 'Путь (url)'
     = f.text_field :path, class: 'form-control'
   .form-group
-    = f.label :title
+    = f.label :title, 'Заголовок'
     = f.text_field :title, class: 'form-control'
   .form-group
-    = f.label :html
+    = f.label :html, 'Исходный код'
     = f.text_area :html, class: 'form-control', rows: '10'
-  .form-group = f.submit class: 'btn btn-success'
+  .form-group = f.submit 'Сохранить', class: 'btn btn-success btn-xs'
