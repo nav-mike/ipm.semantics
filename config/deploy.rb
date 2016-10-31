@@ -34,7 +34,7 @@ set :log_level,     :debug
 set :keep_releases, 1
 
 ## Linked Files & Directories (Default None):
-set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml .env}
 set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 namespace :puma do
