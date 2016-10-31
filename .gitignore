@@ -63,3 +63,6 @@ bower.json
 /config/provision/configs/settings.yml
 .DS_Store
 /.vagrant
+
+# environment
+.env
