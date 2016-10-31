@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   # research areas - public
   get '/research_areas' => 'research_areas#public_index'
 
+  # people - public
+  get '/staff' => 'people#public_index'
+  get '/staff/:id' => 'people#show', constraints: {id: /[0-9]+/}
+
   # courses - public
   get '/courses' => 'courses#public_index'
   get '/courses/:id' => 'courses#show', constraints: {id: /[0-9]+/}
