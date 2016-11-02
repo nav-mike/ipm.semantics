@@ -1,5 +1,7 @@
 [ ![Codeship Status for nav-mike/ipm.semantics](https://app.codeship.com/projects/8c692e70-6b87-0134-d5a6-6efe74dd2a57/status?branch=master)](https://app.codeship.com/projects/176963)
 
+[ ![Waffle.io board for nav-mike/ipm.semantics](https://img.shields.io/badge/board-show-blue.svg)](https://waffle.io/nav-mike/ipm.semantics)
+
 ## Run application on virtual machine
 
 ### Requirements
