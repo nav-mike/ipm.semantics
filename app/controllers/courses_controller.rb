@@ -53,6 +53,6 @@ class CoursesController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:title, :description, :bootsy_image_gallery_id, :tags)
+    params.require(:course).permit(:title, :description, :bootsy_image_gallery_id, course_tags_attributes: %i(word))
   end
 end
