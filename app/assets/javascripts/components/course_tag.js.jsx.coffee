@@ -6,6 +6,10 @@ class @CourseTag extends React.Component
     @state =
       count: 0
 
+  handleClick: (_event) ->
+    count = @state.count
+    @setState(count: count + 1)
+
   render: ->
     div className: 'panel panel-danger',
       div className: 'panel-heading',
@@ -18,5 +22,9 @@ class @CourseTag extends React.Component
             div className: 'col-md-2',
               input className: 'form-control', placeholder: 'Термин (rus/eng)',
             div className: 'col-md-2',
-              button className: 'btn btn-default btn-xs',
+              button {
+                type: 'button',
+                className: 'btn btn-default btn-xs',
+                onClick: ((e) => @handleClick(e))
+              },
                 i className: 'fa fa-fw fa-plus',
