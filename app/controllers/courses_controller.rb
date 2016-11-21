@@ -38,12 +38,12 @@ class CoursesController < ApplicationController
                        [:think, RDF::URI.new('http://purl.org/ontology/bibo/abstract'), :description]
                      ).filter('regex(str(?description), "data mining", "i" )')
 
-    # msparql = SPARQL::Client.new('http://data.uni-muenster.de/sparql')                     
-    # @mbibo = msparql.select(:think, :description)
-    #                  .distinct
-    #                  .where(
-    #                    [:think, RDF::URI.new('http://purl.org/ontology/bibo/abstract'), :description]
-    #                  ).filter('regex(str(?description), "data\\\s+mining", "i" )')
+    msparql = SPARQL::Client.new('http://data.uni-muenster.de/sparql')                     
+    @mbibo = msparql.select(:think, :description)
+                     .distinct
+                     .where(
+                       [:think, RDF::URI.new('http://purl.org/ontology/bibo/abstract'), :description]
+                     ).filter('regex(str(?description), "data\\\s+mining", "i" )')
 
     render layout: 'public'
   end

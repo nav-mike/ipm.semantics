@@ -66,3 +66,6 @@ bower.json
 
 # environment
 .env
+
+# dot files
+dot/
