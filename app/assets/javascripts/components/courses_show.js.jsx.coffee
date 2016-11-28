@@ -1,4 +1,4 @@
-{div, h1, button, p} = React.DOM
+{div, h1, p} = React.DOM
 
 class @CoursesShow extends React.Component
   constructor: (props) ->
@@ -7,6 +7,7 @@ class @CoursesShow extends React.Component
       keywords: ['data mining', 'semantic web']
 
   render: ->
+    CourseKeyword = React.createFactory(window.CourseKeyword)
     div {className: 'container'},
       div {className: 'page-header'},
         h1 {}, @props.title
@@ -19,6 +20,6 @@ class @CoursesShow extends React.Component
         div {className: 'panel-body'},
           p {},
             @state.keywords.map((item, index) =>
-              button {key: index, className: 'btn btn-science-tag btn-default btn-science-tag-public'}, item
+              CourseKeyword item: item, key: index
             )
           
