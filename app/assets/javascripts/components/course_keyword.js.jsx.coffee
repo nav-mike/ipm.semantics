@@ -11,9 +11,13 @@ class @CourseKeyword extends React.Component
   render: ->
     Tooltip = React.createFactory(window.ReactTooltip)
     span {},
-      button {
+      span {
         className: 'btn btn-science-tag btn-default btn-science-tag-public',
         onClick: ((e) => @handleClick(e)),
         'data-tip': 'Some text here...'
       }, @props.item
-      Tooltip {},
+      Tooltip {
+        place: 'top',
+        type: 'info',
+        event: 'click'
+      },

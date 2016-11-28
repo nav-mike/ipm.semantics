@@ -18,7 +18,7 @@ class @CoursesShow extends React.Component
       div {className: 'panel panel-default'},
         div {className: 'panel-heading'}, 'Ключевые термины'
         div {className: 'panel-body'},
-          p {},
+          div {},
             @state.keywords.map((item, index) =>
               CourseKeyword item: item, key: index
             )
