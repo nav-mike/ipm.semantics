@@ -9,16 +9,16 @@
 .containter
   == @course.description
 
-/ .panel.panel-default
-/   .panel-heading Open University
-/   .panel-body
-/   p Thinks
-/   - @query.each_solution do |solution|
-/     pre= solution.inspect
-/   hr
-/   p Articles
-/   - @bibo.each_solution do |solution|
-/     pre= solution.inspect
+.panel.panel-default
+  .panel-heading Open University
+  .panel-body
+  p Thinks
+  - @query.each_solution do |solution|
+    pre= solution.inspect
+  hr
+  p Articles
+  - @bibo.each_solution do |solution|
+    pre= solution.inspect
 
 .panel.panel-default
   .panel-heading University of Southampton
