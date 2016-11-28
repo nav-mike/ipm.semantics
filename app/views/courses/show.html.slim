@@ -3,37 +3,39 @@
 
 - title @course.title
 
-.page-header
-  h1= @course.title
+= react_component 'CoursesShow', @course.attributes
 
-.containter
-  == @course.description
+/ .page-header
+/   h1= @course.title
 
-.panel.panel-default
-  .panel-heading Open University
-  .panel-body
-  p Thinks
-  - @query.each_solution do |solution|
-    pre= solution.inspect
-  hr
-  p Articles
-  - @bibo.each_solution do |solution|
-    pre= solution.inspect
+/ / .containter
+/ /   == @course.description
 
-.panel.panel-default
-  .panel-heading University of Southampton
-  .panel-body
-  p Thinks
-  - @squery.each_solution do |solution|
-    pre= solution.inspect
-  hr
-  p Articles
-  - @sbibo.each_solution do |solution|
-    pre= solution.inspect
+/ / .panel.panel-default
+/ /   .panel-heading Open University
+/ /   .panel-body
+/ /   p Thinks
+/ /   - @query.each_solution do |solution|
+/ /     pre= solution.inspect
+/ /   hr
+/ /   p Articles
+/ /   - @bibo.each_solution do |solution|
+/ /     pre= solution.inspect
 
-/ .panel.panel-default
-/   .panel-heading University of Munster
-/   .panel-body
-/   p Articles
-/   - @mbibo.each_solution do |solution|
-/     pre= solution.inspect
+/ / .panel.panel-default
+/ /   .panel-heading University of Southampton
+/ /   .panel-body
+/ /   p Thinks
+/ /   - @squery.each_solution do |solution|
+/ /     pre= solution.inspect
+/ /   hr
+/ /   p Articles
+/ /   - @sbibo.each_solution do |solution|
+/ /     pre= solution.inspect
+
+/ / / .panel.panel-default
+/ / /   .panel-heading University of Munster
+/ / /   .panel-body
+/ / /   p Articles
+/ / /   - @mbibo.each_solution do |solution|
+/ / /     pre= solution.inspect
