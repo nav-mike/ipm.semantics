@@ -69,3 +69,6 @@ bower.json
 
 # dot files
 dot/
+
+# blazegraph project
+blazegraph/
