@@ -11,6 +11,12 @@ Rails.application.routes.draw do
     resources :research_areas, only: %i(index new destroy create)
   end
 
+  scope 'api' do
+    scope 'v1' do
+      get 'courses/keyword' => 'api/courses#keyword', format: :json
+    end
+  end
+
   root 'pages#show'
 
   # research areas - public

@@ -4,7 +4,7 @@ class @CoursesShow extends React.Component
   constructor: (props) ->
     super props
     @state =
-      keywords: ['data mining', 'semantic web']
+      keywords: ['Data mining', 'Semantic Web']
 
   render: ->
     CourseKeyword = React.createFactory(window.CourseKeyword)

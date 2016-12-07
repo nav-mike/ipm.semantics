@@ -6,6 +6,7 @@ class @CourseKeyword extends React.Component
     @handleAjax()
     @state =
       modalIsOpen: false
+      text: ''
 
   componentWillMount: ->
     window.ReactModal.setAppElement('body')
@@ -24,12 +25,12 @@ class @CourseKeyword extends React.Component
         keyword: @props.item
       }
     })
-    .then((response) => console.log(response))
+    .then((response) => @setState(text: response.data.description))
     .catch((response) => console.log(response))
 
   render: ->
     Modal = React.createFactory(window.ReactModal)
-    text = 'Data Mining (рус. добыча данных, интеллектуальный анализ данных, глубинный анализ данных) — собирательное название, используемое для обозначения совокупности методов обнаружения в данных ранее неизвестных, нетривиальных, практически полезных и доступных интерпретации знаний, необходимых для принятия решений в различных сферах человеческой деятельности.'
+    text = @state.text
     span {},
       span {
         className: 'btn btn-science-tag btn-default btn-science-tag-public btn-xs',
