@@ -1,4 +1,4 @@
-{span, h2, button, div} = React.DOM
+{span, a} = React.DOM
 
 class @CourseKeyword extends React.Component
   constructor: (props) ->
@@ -20,7 +20,8 @@ class @CourseKeyword extends React.Component
   render: ->
     text = @state.text
     span {},
-      span {
+      a {
         className: 'btn btn-science-tag btn-default btn-science-tag-public btn-xs',
-        title: text
+        title: text,
+        href: "search/keywords/#{encodeURI(@props.item)}"
       }, @props.item
