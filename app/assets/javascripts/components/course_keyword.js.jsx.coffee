@@ -8,17 +8,6 @@ class @CourseKeyword extends React.Component
       modalIsOpen: false
       text: ''
 
-  componentWillMount: ->
-    window.ReactModal.setAppElement('body')
-
-  openModal: ->
-    @setState(modalIsOpen: true)
-  
-  afterOpenModal: (_event) ->
-  
-  closeModal: (_event) ->
-    @setState(modalIsOpen: false)
-
   handleAjax: ->
     axios.get('/api/v1/courses/keyword',{
     params: {
@@ -29,18 +18,9 @@ class @CourseKeyword extends React.Component
     .catch((response) => console.log(response))
 
   render: ->
-    Modal = React.createFactory(window.ReactModal)
     text = @state.text
     span {},
       span {
         className: 'btn btn-science-tag btn-default btn-science-tag-public btn-xs',
-        title: text,
-        onClick: ((e) => @openModal(e))
+        title: text
       }, @props.item
-      Modal {
-        isOpen: @state.modalIsOpen,
-        onAfterOpen: ((e) => @afterOpenModal(e)),
-      },
-        h2 {}, "Hello"
-        button { onClick: ((e) => @closeModal(e)) }, "close"
-        div {}, "I am a modal"
