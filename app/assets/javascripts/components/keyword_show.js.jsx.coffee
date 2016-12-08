@@ -27,9 +27,17 @@ class @KeywordShow extends React.Component
         div {className: 'tab-pane active', id: 'dbpedia', role: 'tabpanel'},
           div {className: 'well well-lg'}, 'DBpedia'
         div {className: 'tab-pane', id: 'ou', role: 'tabpanel'},
-          div {className: 'well well-lg'},
-            @props.ou_data.map((item, index) =>
-              OpenUniversityDataItem item: item, key: index
-            )
+          div {className: 'panel panel-warning'},
+            div {className: 'panel-heading'}, 'Data'
+            div {className: 'panel-body'},
+              @props.ou_data.map((item, index) =>
+                OpenUniversityDataItem item: item, key: index
+              )
+          div {className: 'panel panel-info'},
+            div {className: 'panel-heading'}, 'Publications'
+            div {className: 'panel-body'},
+              @props.ou_a_data.map((item, index) =>
+                OpenUniversityDataItem item: item, key: index
+              )
         div {className: 'tab-pane', id: 'southampton', role: 'tabpanel'},
           div {className: 'well well-lg'}, 'University of Southampton'
