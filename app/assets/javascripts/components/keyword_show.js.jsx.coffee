@@ -40,4 +40,15 @@ class @KeywordShow extends React.Component
                 OpenUniversityDataItem item: item, key: index
               )
         div {className: 'tab-pane', id: 'southampton', role: 'tabpanel'},
-          div {className: 'well well-lg'}, 'University of Southampton'
+          div {className: 'panel panel-warning'},
+            div {className: 'panel-heading'}, 'Data'
+            div {className: 'panel-body'},
+              @props.s_data.map((item, index) =>
+                OpenUniversityDataItem item: item, key: index
+              )
+          div {className: 'panel panel-info'},
+            div {className: 'panel-heading'}, 'Publications'
+            div {className: 'panel-body'},
+              @props.s_a_data.map((item, index) =>
+                OpenUniversityDataItem item: item, key: index
+              )
