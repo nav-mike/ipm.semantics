@@ -1,10 +1,11 @@
-{div, h1, a, li, ul, h1, i, img} = React.DOM
+{div, h1, a, li, ul, h1, i, img, table, tbody, thead, th, tr} = React.DOM
 
 class @KeywordShow extends React.Component
   constructor: (props) ->
     super props
 
   render: ->
+    OpenUniversityDataItem = React.createFactory(window.OpenUniversityDataItem)
     div {className: 'container'},
       div {className: 'page-header'},
         h1 {}, @props.keyword
@@ -26,6 +27,9 @@ class @KeywordShow extends React.Component
         div {className: 'tab-pane active', id: 'dbpedia', role: 'tabpanel'},
           div {className: 'well well-lg'}, 'DBpedia'
         div {className: 'tab-pane', id: 'ou', role: 'tabpanel'},
-          div {className: 'well well-lg'}, 'Opeb University'
+          div {className: 'well well-lg'},
+            @props.ou_data.map((item, index) =>
+              OpenUniversityDataItem item: item, key: index
+            )
         div {className: 'tab-pane', id: 'southampton', role: 'tabpanel'},
           div {className: 'well well-lg'}, 'University of Southampton'
