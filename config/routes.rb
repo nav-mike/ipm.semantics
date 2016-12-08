@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   # research areas - public
   get '/research_areas' => 'research_areas#public_index'
 
+  get '/courses/search/keywords/:keyword' => 'keywords#index', constraints: {keyword: /.+/}
+
   # people - public
   get '/staff' => 'people#public_index'
   get '/staff/:id' => 'people#show', constraints: {id: /[0-9]+/}
