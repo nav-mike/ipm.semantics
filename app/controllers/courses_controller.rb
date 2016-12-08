@@ -13,38 +13,6 @@ class CoursesController < ApplicationController
   end
 
   def show
-    # sparql = SPARQL::Client.new('http://data.open.ac.uk/sparql')
-    # @query = sparql.select(:think, :description)
-    #             .distinct
-    #             .where(
-    #               [:think, RDF::URI.new('http://purl.org/dc/terms/description'), :description],
-    #             ).filter('regex(str(?description), "data\\\s+mining", "i" )')
-
-    # @bibo = sparql.select(:think, :description)
-    #             .distinct
-    #             .where(
-    #               [:think, RDF::URI.new('http://purl.org/ontology/bibo/abstract'), :description],
-    #             ).filter('regex(str(?description), "data\\\s+mining", "i" )')
-
-    # ssparql = SPARQL::Client.new('http://sparql.data.southampton.ac.uk')
-    # @squery = ssparql.select(:think, :description)
-    #                  .distinct
-    #                  .where(
-    #                    [:think, RDF::URI.new('http://purl.org/dc/terms/description'), :description]
-    #                  ).filter('regex(str(?description), "data mining", "i" )')
-    # @sbibo = ssparql.select(:think, :description)
-    #                  .distinct
-    #                  .where(
-    #                    [:think, RDF::URI.new('http://purl.org/ontology/bibo/abstract'), :description]
-    #                  ).filter('regex(str(?description), "data mining", "i" )')
-
-    # msparql = SPARQL::Client.new('http://data.uni-muenster.de/sparql')                     
-    # @mbibo = msparql.select(:think, :description)
-    #                  .distinct
-    #                  .where(
-    #                    [:think, RDF::URI.new('http://purl.org/ontology/bibo/abstract'), :description]
-    #                  ).filter('regex(str(?description), "data\\\s+mining", "i" )')
-
     render layout: 'public'
   end
 
