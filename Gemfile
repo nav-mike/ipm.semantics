@@ -49,7 +49,6 @@ gem 'bootsy'
 gem 'react-rails'
 
 # RDF
-gem 'rdf-virtuoso'
 gem 'sparql-client'
 gem 'sparql'
 
