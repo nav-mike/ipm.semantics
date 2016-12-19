@@ -66,3 +66,9 @@ bower.json
 
 # environment
 .env
+
+# dot files
+dot/
+
+# blazegraph project
+blazegraph/

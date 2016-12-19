@@ -48,6 +48,11 @@ gem 'bootstrap-generators', group: :development
 gem 'bootsy'
 gem 'react-rails'
 
+# RDF
+gem 'rdf-virtuoso'
+gem 'sparql-client'
+gem 'sparql'
+
 # REST
 gem 'faraday'
 gem 'faraday_middleware'
@@ -76,10 +81,6 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'simplecov', require: false, group: :test
   gem 'capybara-screenshot', group: :test
-end
-
-group :test do
-  gem 'database_cleaner'
 end
 
 group :development do
